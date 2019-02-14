@@ -99,4 +99,7 @@ c.KubeSpawner.node_selector = { 'role': 'jupyter' }
 c.JupyterHub.cleanup_servers = False
 c.JupyterHub.ip = '0.0.0.0'
 c.JupyterHub.hub_ip = '0.0.0.0'
-#c.Authenticator.admin_users = {'razorm@gmail.com'}
+
+# Force auth plugin to recheck users on every request
+c.RemoteUserAuthenticator.auth_refresh_age = 1
+c.RemoteUserAuthenticator.refresh_pre_spawn = True
